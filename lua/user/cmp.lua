@@ -10,8 +10,6 @@ end
 
 require("luasnip/loaders/from_vscode").lazy_load()
 
-
-
 local check_backspace = function()
 	local col = vim.fn.col(".") - 1
 	return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
@@ -47,12 +45,11 @@ local kind_icons = {
 
 vim.g["UltiSnipsSnippetDirectories"] = { "ultisnips" }
 
-
-local cmp_ultisnips_mappings = require("cmp_nvim_ultisnips.mappings")
+-- local cmp_ultisnips_mappings = require("cmp_nvim_ultisnips.mappings")
 cmp.setup({
 	snippet = {
 		expand = function(args)
-			luasnip.lsp_expand(args.body) -- For `luasnip` users.
+			-- luasnip.lsp_expand(args.body) -- For `luasnip` users.
 			vim.fn["UltiSnips#Anon"](args.body)
 		end,
 	},
@@ -65,7 +62,7 @@ cmp.setup({
 		["<C-Space>"] = cmp.mapping(
 			cmp.mapping.complete(),
 			-- function(fallback)
-				-- cmp_ultisnips_mappings.expand_or_jump_forwards()
+			-- cmp_ultisnips_mappings.expand_or_jump_forwards()
 			-- end,
 			{ "i", "c" }
 		),
@@ -82,6 +79,7 @@ cmp.setup({
 
 			if cmp.visible() then
 				cmp.select_next_item()
+        -- cmp_ultisnips_mappings.expand_or_jump_forwards(fallback)
 			elseif luasnip.expandable() then
 				luasnip.expand()
 			elseif luasnip.expand_or_jumpable() then
