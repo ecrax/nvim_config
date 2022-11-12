@@ -70,7 +70,7 @@ return packer.startup(function(use)
 		end,
 	})
 	use({ "lervag/vimtex" })
-	use({ "SirVer/ultisnips" })
+	-- use({ "SirVer/ultisnips" })
 	use({
 		"WhoIsSethDaniel/toggle-lsp-diagnostics.nvim",
 		config = function()
@@ -95,10 +95,10 @@ return packer.startup(function(use)
 	use({ "saadparwaiz1/cmp_luasnip", commit = "a9de941bcbda508d0a45d28ae366bb3f08db2e36" }) -- snippet completions
 	use({ "hrsh7th/cmp-nvim-lsp", commit = "affe808a5c56b71630f17aa7c38e15c59fd648a8" })
 	use({ "hrsh7th/cmp-nvim-lua", commit = "d276254e7198ab7d00f117e88e223b4bd8c02d21" })
-	use({ "quangnguyen30192/cmp-nvim-ultisnips" })
+	-- use({ "quangnguyen30192/cmp-nvim-ultisnips" })
 
 	-- snippets
-	use({ "L3MON4D3/LuaSnip", commit = "8f8d493e7836f2697df878ef9c128337cbf2bb84" }) --snippet engine
+	use({ "L3MON4D3/LuaSnip", commit = "8f8d493e7836f2697df878ef9c128337cbf2bb84", after = "nvim-cmp" }) --snippet engine
 	use({ "rafamadriz/friendly-snippets", commit = "2be79d8a9b03d4175ba6b3d14b082680de1b31b1" }) -- a bunch of snippets to use
 
 	-- LSP
