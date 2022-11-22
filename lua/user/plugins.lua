@@ -89,6 +89,7 @@ return packer.startup(function(use)
 			require("poimandres").setup({})
 		end,
 	})
+	use({ "catppuccin/nvim", as = "catppuccin" })
 
 	use({ "KeitaNakamura/tex-conceal.vim" })
 	use({
