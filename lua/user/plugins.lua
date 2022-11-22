@@ -82,8 +82,19 @@ return packer.startup(function(use)
 	use({ "folke/tokyonight.nvim", commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764" })
 	use({ "lunarvim/darkplus.nvim", commit = "13ef9daad28d3cf6c5e793acfc16ddbf456e1c83" })
 	use({ "gruvbox-community/gruvbox" })
+	use({ "arzg/vim-colors-xcode" })
+	use({
+		"olivercederborg/poimandres.nvim",
+		config = function()
+			require("poimandres").setup({})
+		end,
+	})
 
 	use({ "KeitaNakamura/tex-conceal.vim" })
+	use({
+		"weilbith/nvim-code-action-menu",
+		cmd = "CodeActionMenu",
+	})
 
 	-- cmp plugins
 	use({
@@ -95,22 +106,21 @@ return packer.startup(function(use)
 	use({ "saadparwaiz1/cmp_luasnip", commit = "a9de941bcbda508d0a45d28ae366bb3f08db2e36" }) -- snippet completions
 	use({ "hrsh7th/cmp-nvim-lsp", commit = "affe808a5c56b71630f17aa7c38e15c59fd648a8" })
 	use({ "hrsh7th/cmp-nvim-lua", commit = "d276254e7198ab7d00f117e88e223b4bd8c02d21" })
-	-- use({ "quangnguyen30192/cmp-nvim-ultisnips" })
 
 	-- snippets
 	use({ "L3MON4D3/LuaSnip", commit = "8f8d493e7836f2697df878ef9c128337cbf2bb84", after = "nvim-cmp" }) --snippet engine
 	use({ "rafamadriz/friendly-snippets", commit = "2be79d8a9b03d4175ba6b3d14b082680de1b31b1" }) -- a bunch of snippets to use
-  use ({
-  "iurimateus/luasnip-latex-snippets.nvim",
-  -- replace "lervag/vimtex" with "nvim-treesitter/nvim-treesitter" if you're
-  -- using treesitter.
-  requires = { "L3MON4D3/LuaSnip", "lervag/vimtex" },
-  config = function()
-    require'luasnip-latex-snippets'.setup()
-    -- or setup({ use_treesitter = true })
-  end,
-  ft = "tex",
-})
+	use({
+		"iurimateus/luasnip-latex-snippets.nvim",
+		-- replace "lervag/vimtex" with "nvim-treesitter/nvim-treesitter" if you're
+		-- using treesitter.
+		requires = { "L3MON4D3/LuaSnip", "lervag/vimtex" },
+		config = function()
+			require("luasnip-latex-snippets").setup()
+			-- or setup({ use_treesitter = true })
+		end,
+		ft = "tex",
+	})
 
 	-- LSP
 	-- use { "williamboman/nvim-lsp-installer", commit = "e9f13d7acaa60aff91c58b923002228668c8c9e6" } -- simple to use language server installer
@@ -136,6 +146,8 @@ return packer.startup(function(use)
 	use({ "mfussenegger/nvim-dap", commit = "6b12294a57001d994022df8acbe2ef7327d30587" })
 	use({ "rcarriga/nvim-dap-ui", commit = "1cd4764221c91686dcf4d6b62d7a7b2d112e0b13" })
 	use({ "ravenxrz/DAPInstall.nvim", commit = "8798b4c36d33723e7bba6ed6e2c202f84bb300de" })
+
+	use({ "abecodes/tabout.nvim" })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

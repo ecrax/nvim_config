@@ -7,8 +7,9 @@ local servers = {
 	"bashls",
 	"jsonls",
 	"yamlls",
-  "ltex",
-  "jdtls"
+	"ltex",
+	"texlab",
+	"jdtls",
 }
 
 local settings = {
