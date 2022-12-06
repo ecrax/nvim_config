@@ -5,6 +5,9 @@ if not status_cmp_ok then
 	return
 end
 
+local rt = require("rust-tools")
+rt.setup({})
+
 M.capabilities = vim.lsp.protocol.make_client_capabilities()
 M.capabilities.textDocument.completion.completionItem.snippetSupport = true
 M.capabilities = cmp_nvim_lsp.update_capabilities(M.capabilities)

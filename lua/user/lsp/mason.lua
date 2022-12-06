@@ -10,6 +10,7 @@ local servers = {
 	"ltex",
 	"texlab",
 	"jdtls",
+  "rust-analyzer"
 }
 
 local settings = {
